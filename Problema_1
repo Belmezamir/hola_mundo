@@ -1,0 +1,17 @@
+def dividir_lista(lista):
+    negativos = []
+    positivos = []
+    
+    # Recorrer la lista y separar los números negativos y positivos
+    for num in lista:
+        if num < 0:
+            negativos.append(num)
+        elif num > 0:
+            positivos.append(num)
+    
+    # Ordenar ambas listas
+    negativos.sort()
+    positivos.sort()
+    
+    # Retornar las dos listas
+    return negativos, positivos
