@@ -1,0 +1,30 @@
+def obtener_conjunto(nombre):
+    # Solicita al usuario que ingrese los elementos de un conjunto.
+    # Convertir la entrada en una lista de enteros.
+    conjunto = input(f"Ingrese los elementos del {nombre} (separados por espacio): ")
+    
+    # Convertir la cadena de entrada en una lista de enteros
+    conjunto = set(map(int, conjunto.split()))
+    
+    return conjunto
+
+def main():
+    # Obtener los dos conjuntos del usuario
+    conjunto1 = obtener_conjunto("primer conjunto")
+    conjunto2 = obtener_conjunto("segundo conjunto")
+    
+    # Calcular la intersección (Calcula los elementos comunes entre los dos conjuntos)
+    interseccion = conjunto1 & conjunto2
+    print("\nIntersección (elementos comunes):", interseccion)
+    
+    # Calcular la unión (Calcula todos los elementos de ambos conjuntos, eliminando duplicados)
+    union = conjunto1 | conjunto2
+    print("Unión (todos los elementos sin duplicados):", union)
+    
+    # Calcular la diferencia simétrica (Calcula los elementos que están en uno de los conjuntos pero no en el otro, es decir, los elementos exclusivos de cada conjunto)
+    diferencia_simetrica = conjunto1 ^ conjunto2
+    print("Diferencia simétrica (elementos que están en uno u otro conjunto, pero no en ambos):", diferencia_simetrica)
+
+# Llamar a la función principal
+if __name__ == "__main__":
+    main()
